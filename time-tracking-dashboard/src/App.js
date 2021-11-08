@@ -1,5 +1,6 @@
+import GlobalWrapper from "./GlobalWrapper";
 function App() {
-	return <div>test</div>;
+	return <GlobalWrapper />;
 }
 
 export default App;
