@@ -1,0 +1,53 @@
+.user-card {
+	max-width: 100%;
+	color: hsl(200, 100%, 100%);
+	background-color: hsl(246, 80%, 60%);
+	border-radius: 15px;
+	background-color: hsl(235, 46%, 20%);
+}
+.user-info {
+	display: flex;
+	align-items: center;
+	background-color: hsl(246, 80%, 60%);
+	border-radius: 15px;
+	padding: 1em;
+}
+.profile-picture {
+	margin: 1em;
+	background-color: white;
+	border-radius: 50%;
+	width: 55px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.profile-picture img {
+	width: 50px;
+}
+
+.card-assigner {
+	color: hsl(236, 100%, 87%);
+	font-size: 0.8rem;
+}
+
+.user-name {
+	font-size: 1.3rem;
+}
+
+.time-nav {
+	max-width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	padding: 1.6em;
+}
+
+.nav-link {
+	color: hsl(235, 45%, 61%);
+	cursor: pointer;
+}
+
+.active {
+	color: hsl(200, 100%, 100%);
+}
