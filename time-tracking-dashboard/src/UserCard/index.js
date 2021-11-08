@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import UserPic from "../assets/image-jeremy.png";
+
 const UserCard = () => {
 	return (
 		<div className='user-card'>
