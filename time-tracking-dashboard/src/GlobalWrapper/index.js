@@ -10,9 +10,11 @@ const GlobalWrapper = () => {
 	const [isMonthly, setIsMonthly] = useState(false);
 	const [active, setActive] = useState("daily");
 
+	// Click handler for li elements on UserCard
 	const handleClick = (e) => {
-		e.preventDefault();
 		setActive(e.target.id);
+
+		//Conditions to handle active state for li elements on UserCard
 		if (active === "daily") {
 			setIsDaily(true);
 			setIsWeekly(false);
@@ -28,13 +30,12 @@ const GlobalWrapper = () => {
 			setIsWeekly(false);
 			setIsMonthly(true);
 		}
-
-		console.log(active);
 	};
 
 	return (
 		<div className='main'>
 			<UserCard
+				active={active}
 				clickHandler={handleClick}
 				daily={isDaily}
 				weekly={isWeekly}
@@ -47,16 +48,16 @@ const GlobalWrapper = () => {
 								category={stats.title}
 								title={stats.title}
 								current={
-									isDaily
+									active === "daily"
 										? stats.timeframes.daily.current
-										: isWeekly
+										: active === "weekly"
 										? stats.timeframes.weekly.current
 										: stats.timeframes.monthly.current
 								}
 								previous={
-									isDaily
+									active === "daily"
 										? stats.timeframes.daily.previous
-										: isWeekly
+										: active === "weekly"
 										? stats.timeframes.weekly.previous
 										: stats.timeframes.monthly.current
 								}

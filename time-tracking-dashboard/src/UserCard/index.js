@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import UserPic from "../assets/image-jeremy.png";
 
-const UserCard = ({ daily, weekly, monthly, clickHandler }) => {
+const UserCard = ({ daily, weekly, monthly, clickHandler, active }) => {
 	return (
 		<div className='user-card'>
 			<div className='user-info'>
@@ -17,19 +17,19 @@ const UserCard = ({ daily, weekly, monthly, clickHandler }) => {
 			<div>
 				<ul className='time-nav'>
 					<li
-						className={`nav-link ${daily ? "active" : ""}`}
+						className={`nav-link ${active === "daily" ? "active" : ""}`}
 						onClick={clickHandler}
 						id='daily'>
 						Daily
 					</li>
 					<li
-						className={`nav-link ${weekly ? "active" : ""}`}
+						className={`nav-link ${active === "weekly" ? "active" : ""}`}
 						onClick={clickHandler}
 						id='weekly'>
 						Weekly
 					</li>
 					<li
-						className={`nav-link ${monthly ? "active" : ""}`}
+						className={`nav-link ${active === "monthly" ? "active" : ""}`}
 						onClick={clickHandler}
 						id='monthly'>
 						Monthly
@@ -41,9 +41,3 @@ const UserCard = ({ daily, weekly, monthly, clickHandler }) => {
 };
 
 export default UserCard;
-
-/* const handleClick = (e) => {
-	const value = e.target.id;
-	if (value === "tests") dispatch(getLoggedInUserAction());
-	setActive(value);
-}; */
