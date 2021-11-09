@@ -2,12 +2,41 @@
 	max-width: 100%;
 	color: hsl(200, 100%, 100%);
 	border-radius: 15px;
-	background-color: hsl(15, 100%, 70%); /*light red*/
-	background-image: url("../assets/icon-work.svg");
+
 	background-repeat: no-repeat;
 	background-position: top right;
 	margin-top: 1em;
 	padding-top: 3em;
+}
+
+.work {
+	background-color: hsl(15, 100%, 70%);
+	background-image: url("../assets/icon-work.svg");
+}
+
+.play {
+	background-color: hsl(195, 74%, 62%);
+	background-image: url("../assets/icon-play.svg");
+}
+
+.study {
+	background-color: hsl(348, 100%, 68%);
+	background-image: url("../assets/icon-study.svg");
+}
+
+.exercise {
+	background-color: hsl(145, 58%, 55%);
+	background-image: url("../assets/icon-exercise.svg");
+}
+
+.social {
+	background-color: hsl(264, 64%, 52%);
+	background-image: url("../assets/icon-social.svg");
+}
+
+.self-care {
+	background-color: hsl(43, 84%, 65%);
+	background-image: url("../assets/icon-self-care.svg");
 }
 
 .info-wrapper {
