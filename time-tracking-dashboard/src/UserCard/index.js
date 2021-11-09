@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import UserPic from "../assets/image-jeremy.png";
 
-const UserCard = () => {
+const UserCard = ({ daily, weekly, monthly, clickHandler, active }) => {
 	return (
 		<div className='user-card'>
 			<div className='user-info'>
@@ -16,9 +16,24 @@ const UserCard = () => {
 			</div>
 			<div>
 				<ul className='time-nav'>
-					<li className='nav-link'>Daily</li>
-					<li className='nav-link active'>Weekly</li>
-					<li className='nav-link'>Monthly</li>
+					<li
+						className={`nav-link ${active === "daily" ? "active" : ""}`}
+						onClick={clickHandler}
+						id='daily'>
+						Daily
+					</li>
+					<li
+						className={`nav-link ${active === "weekly" ? "active" : ""}`}
+						onClick={clickHandler}
+						id='weekly'>
+						Weekly
+					</li>
+					<li
+						className={`nav-link ${active === "monthly" ? "active" : ""}`}
+						onClick={clickHandler}
+						id='monthly'>
+						Monthly
+					</li>
 				</ul>
 			</div>
 		</div>
