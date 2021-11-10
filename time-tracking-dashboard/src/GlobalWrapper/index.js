@@ -34,38 +34,43 @@ const GlobalWrapper = () => {
 
 	return (
 		<div className='main'>
-			<UserCard
-				active={active}
-				clickHandler={handleClick}
-				daily={isDaily}
-				weekly={isWeekly}
-				monthly={isMonthly}
-			/>
-			{Data.length > 0
-				? Data.map((stats, index) => {
-						return (
-							<Card
-								category={stats.title}
-								title={stats.title}
-								current={
-									active === "daily"
-										? stats.timeframes.daily.current
-										: active === "weekly"
-										? stats.timeframes.weekly.current
-										: stats.timeframes.monthly.current
-								}
-								previous={
-									active === "daily"
-										? stats.timeframes.daily.previous
-										: active === "weekly"
-										? stats.timeframes.weekly.previous
-										: stats.timeframes.monthly.current
-								}
-								key={index}
-							/>
-						);
-				  })
-				: "No data to show for this user."}
+			<div className='user-wrapper'>
+				<UserCard
+					active={active}
+					clickHandler={handleClick}
+					daily={isDaily}
+					weekly={isWeekly}
+					monthly={isMonthly}
+				/>
+			</div>
+			<div className='data-wrapper'>
+				{Data.length > 0
+					? Data.map((stats, index) => {
+							return (
+								<Card
+									active={active}
+									category={stats.title}
+									title={stats.title}
+									current={
+										active === "daily"
+											? stats.timeframes.daily.current
+											: active === "weekly"
+											? stats.timeframes.weekly.current
+											: stats.timeframes.monthly.current
+									}
+									previous={
+										active === "daily"
+											? stats.timeframes.daily.previous
+											: active === "weekly"
+											? stats.timeframes.weekly.previous
+											: stats.timeframes.monthly.current
+									}
+									key={index}
+								/>
+							);
+					  })
+					: "No data to show for this user."}
+			</div>
 		</div>
 	);
 };

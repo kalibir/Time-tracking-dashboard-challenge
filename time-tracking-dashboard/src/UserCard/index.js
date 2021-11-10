@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 import UserPic from "../assets/image-jeremy.png";
 
-const UserCard = ({ daily, weekly, monthly, clickHandler, active }) => {
+const UserCard = ({ clickHandler, active }) => {
 	return (
 		<div className='user-card'>
 			<div className='user-info'>
