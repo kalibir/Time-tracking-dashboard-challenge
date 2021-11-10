@@ -1,13 +1,28 @@
-@media (min-width: 376px) and (max-width: 1440px) {
+@media (min-width: 768px) and (max-width: 1440px) {
 	.main {
-		max-width: 70vw;
-		height: 500px;
+		max-width: 80vw;
+		height: 100vh;
 		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+		padding: 0;
 	}
-	// USER CARD STYLES
+
 	.main > .user-wrapper {
 		max-width: 30%;
-		height: 100%;
+		max-height: 500px;
+		height: 500px;
+		margin-right: 1em;
+	}
+
+	.main > .data-wrapper {
+		max-width: 70%;
+		width: 70%;
+		height: 500px;
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
 	}
 
 	.user-card {
@@ -46,5 +61,24 @@
 
 	.time-nav > .nav-link {
 		margin-bottom: 1em;
+	}
+
+	.data-wrapper > .activity-card {
+		margin: 0;
+		width: 33%;
+		margin-right: 1em;
+		margin-bottom: 1em;
+	}
+
+	.info-wrapper > .card-header {
+		font-size: 0.8em;
+	}
+
+	.info-wrapper > .card-info {
+		display: block;
+	}
+
+	.card-info > .hours {
+		font-size: 3em;
 	}
 }

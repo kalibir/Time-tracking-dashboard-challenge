@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import UserPic from "../assets/image-jeremy.png";
-
+import "../desktop-layout.css";
 const UserCard = ({ clickHandler, active }) => {
 	return (
 		<div className='user-card'>

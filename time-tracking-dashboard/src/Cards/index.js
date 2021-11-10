@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-
+import "../desktop-layout.css";
 const Card = ({ category, title, current, previous, active }) => {
 	return (
 		<div className={`activity-card ${category}`}>
