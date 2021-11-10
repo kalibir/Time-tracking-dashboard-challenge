@@ -14,28 +14,27 @@ const UserCard = ({ clickHandler, active }) => {
 					<p className='user-name'>Jeremy Robson</p>
 				</div>
 			</div>
-			<div>
-				<ul className='time-nav'>
-					<li
-						className={`nav-link ${active === "daily" ? "active" : ""}`}
-						onClick={clickHandler}
-						id='daily'>
-						Daily
-					</li>
-					<li
-						className={`nav-link ${active === "weekly" ? "active" : ""}`}
-						onClick={clickHandler}
-						id='weekly'>
-						Weekly
-					</li>
-					<li
-						className={`nav-link ${active === "monthly" ? "active" : ""}`}
-						onClick={clickHandler}
-						id='monthly'>
-						Monthly
-					</li>
-				</ul>
-			</div>
+
+			<ul className='time-nav'>
+				<li
+					className={`nav-link ${active === "daily" ? "active" : ""}`}
+					onClick={clickHandler}
+					id='daily'>
+					Daily
+				</li>
+				<li
+					className={`nav-link ${active === "weekly" ? "active" : ""}`}
+					onClick={clickHandler}
+					id='weekly'>
+					Weekly
+				</li>
+				<li
+					className={`nav-link ${active === "monthly" ? "active" : ""}`}
+					onClick={clickHandler}
+					id='monthly'>
+					Monthly
+				</li>
+			</ul>
 		</div>
 	);
 };

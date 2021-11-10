@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import "../desktop-layout.css";
 import UserCard from "../UserCard";
 import Card from "../Cards";
 import Data from "../data.json";
