@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
-
-const Card = ({ category, title, current, previous }) => {
+import "../desktop-layout.css";
+const Card = ({ category, title, current, previous, active }) => {
 	return (
 		<div className={`activity-card ${category}`}>
 			<div className='info-wrapper'>
@@ -15,7 +15,19 @@ const Card = ({ category, title, current, previous }) => {
 				</div>
 				<div className='card-info'>
 					<div className='hours'>{current}hrs</div>
-					<div className='records'>Last Week - {previous}hrs</div>
+					<div className='records'>
+						Last{" "}
+						{`${
+							active === "daily"
+								? "Day"
+								: active === "weekly"
+								? "Week"
+								: active === "monthly"
+								? "Month"
+								: null
+						}`}{" "}
+						- {previous}hrs
+					</div>
 				</div>
 			</div>
 		</div>
