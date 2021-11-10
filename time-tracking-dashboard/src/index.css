@@ -1,8 +1,7 @@
-@import url("https://fonts.google.com/specimen/Rubik");
 * {
 	margin: 0;
 	padding: 0;
-	box-size: border-box;
+	box-sizing: border-box;
 }
 body {
 	font-family: "Rubik", sans-serif;

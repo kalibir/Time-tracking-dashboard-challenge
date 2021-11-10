@@ -1,0 +1,86 @@
+.activity-card {
+	max-width: 100%;
+	color: hsl(200, 100%, 100%);
+	border-radius: 15px;
+	background-repeat: no-repeat;
+	background-position: top right;
+	margin-top: 1em;
+	padding-top: 3em;
+}
+
+.Work {
+	background-color: hsl(15, 100%, 70%);
+	background-image: url("../assets/icon-work.svg");
+}
+
+.Play {
+	background-color: hsl(195, 74%, 62%);
+	background-image: url("../assets/icon-play.svg");
+}
+
+.Study {
+	background-color: hsl(348, 100%, 68%);
+	background-image: url("../assets/icon-study.svg");
+}
+
+.Exercise {
+	background-color: hsl(145, 58%, 55%);
+	background-image: url("../assets/icon-exercise.svg");
+}
+
+.Social {
+	background-color: hsl(264, 64%, 52%);
+	background-image: url("../assets/icon-social.svg");
+}
+
+.Self-care {
+	background-color: hsl(43, 84%, 65%);
+	background-image: url("../assets/icon-self-care.svg");
+}
+
+.info-wrapper {
+	border-radius: 15px;
+	background-color: hsl(235, 46%, 20%); /*Dark blue*/
+	padding: 1em;
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.category-name {
+	font-weight: 400;
+	font-size: 1.2em;
+}
+
+.menu-btn {
+	display: flex;
+	cursor: pointer;
+}
+
+.dot {
+	width: 3px;
+	height: 3px;
+	background-color: hsl(236, 100%, 87%); /*pale blue*/
+	border-radius: 50%;
+	margin: 2px;
+}
+
+.card-info {
+	display: flex;
+	margin: 1em 0;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hours {
+	font-size: 2em;
+	font-weight: 300;
+}
+
+.records {
+	color: hsl(236, 100%, 87%); /*pale blue*/
+	font-weight: 300;
+}
