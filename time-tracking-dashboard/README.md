@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Frontend Mentor - Time tracking dashboard solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw).
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-### `npm start`
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Overview
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This solution was developed using the ReactJs framework since it is ideal for building reusable UI components.
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Switch between viewing Daily, Weekly, and Monthly stats
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [Add solution URL here](https://github.com/kalibir/Time-tracking-dashboard-challenge/tree/master/time-tracking-dashboard)
+- Live Site URL: [Add live site URL here](https://kalibir-time-tracker-dashboard.netlify.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+Since a `data.json` file was provided, the challenge was to generate the activity cards based on that file. Taking that objective in mind, I used the `useState` hook and followed these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Created a state variable to toggle between **daily data, weekly data, and monthly data**. This variable was passed down to the various components as `props`;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+const [active, setActive] = useState("daily");
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Provided I have an `id` for each of the links in the `UserCard` component and depending on it's value, this variable toggles the `active` class on the links. For that end I created a `clickHandler` that sets the variable's value to the element's id:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```js
+// Click handler for li elements on UserCard
+const handleClick = (e) => {
+	setActive(e.target.id);
+};
+```
 
-## Learn More
+This function was also passed as `props` to the `UserCard` component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+And here's how the `active` class was toggled depending on the `active` variable's value:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+<li
+					className={`nav-link ${active === "daily" ? "active" : ""}`}
+					onClick={clickHandler}
+					id='daily'>
+					Daily
+				</li>
+				<li
+					className={`nav-link ${active === "weekly" ? "active" : ""}`}
+					onClick={clickHandler}
+					id='weekly'>
+					Weekly
+				</li>
+				<li
+					className={`nav-link ${active === "monthly" ? "active" : ""}`}
+					onClick={clickHandler}
+					id='monthly'>
+					Monthly
+				</li>
+```
 
-### Code Splitting
+- This variable was also used to conditionally render data, meaning depending on it's value (daily, weekly or monthly) it would render its data accordingly. To achieve that I used the array of data provided by the `data.json` file, and mapped(using the `.map()` array method) through it generating for each element in that array a `Card` component with corresponding data:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+<div className='data-wrapper'>
+	{Data.length > 0
+		? Data.map((stats, index) => {
+				return (
+					<Card
+						active={active}
+						category={stats.title}
+						title={stats.title}
+						current={
+							active === "daily"
+								? stats.timeframes.daily.current
+								: active === "weekly"
+								? stats.timeframes.weekly.current
+								: stats.timeframes.monthly.current
+						}
+						previous={
+							active === "daily"
+								? stats.timeframes.daily.previous
+								: active === "weekly"
+								? stats.timeframes.weekly.previous
+								: stats.timeframes.monthly.current
+						}
+						key={index}
+					/>
+				);
+		  })
+		: "No data to show for this user."}
+</div>
+```
 
-### Analyzing the Bundle Size
+In these cases it's always better to check if we indeed have the data that we need. If not, we handle that by rendering a message. In this case I checked if the data array had any elements in it.
+If that condition returns `true` then we render the cards with the correspondent data. If not we render a message telling that is no data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Built with
 
-### Making a Progressive Web App
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Continued development
 
-### Advanced Configuration
+I may have over complicated the HTML markup in this project. I will have to refactor it in a way that it is easier to read and it doesn't break anything when displaying the elements in the browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Author
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [Antonio Meireles](https://github.com/kalibir)
+- Frontend Mentor - [@kalibir](https://www.frontendmentor.io/profile/kalibir)
