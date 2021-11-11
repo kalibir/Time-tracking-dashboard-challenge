@@ -36,15 +36,7 @@ Users should be able to:
 
 Since a `data.json` file was provided, the challenge was to generate the activity cards based on that file. Taking that objective in mind, I used the `useState` hook and followed these steps:
 
-- Created state variables to toggle between **daily data, weekly data, and monthly data**;
-
-```js
-const [isDaily, setIsDaily] = useState(true);
-const [isWeekly, setIsWeekly] = useState(false);
-const [isMonthly, setIsMonthly] = useState(false);
-```
-
-- The variables mentioned above would be passed as `props` to the `UserCard` component to assert which one of the **nav links** should be active, so if `isDialy` was `true` the **Daily link** would be active and the other two woud be inactive.
+- Created a state variable to toggle between **daily data, weekly data, and monthly data**;
 
 ### Built with
 
