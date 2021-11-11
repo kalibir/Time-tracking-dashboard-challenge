@@ -37,6 +37,7 @@ Users should be able to:
 Since a `data.json` file was provided, the challenge was to generate the activity cards based on that file. Taking that objective in mind, I used the `useState` hook and followed these steps:
 
 - Created a state variable to toggle between **daily data, weekly data, and monthly data**;
+-
 
 ### Built with
 
