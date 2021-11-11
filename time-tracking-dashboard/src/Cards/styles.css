@@ -6,6 +6,7 @@
 	background-position: top right;
 	margin-top: 1em;
 	padding-top: 3em;
+	pointer: cursor;
 }
 
 .Work {
@@ -42,6 +43,11 @@
 	border-radius: 15px;
 	background-color: hsl(235, 46%, 20%); /*Dark blue*/
 	padding: 1em;
+	cursor: pointer;
+}
+
+.info-wrapper:hover {
+	background-color: hsl(215, 46%, 20%);
 }
 
 .card-header {
