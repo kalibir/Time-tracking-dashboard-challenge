@@ -47,6 +47,10 @@
 	cursor: pointer;
 }
 
+.nav-link:hover {
+	color: #fff;
+}
+
 .active {
 	color: hsl(200, 100%, 100%);
 }

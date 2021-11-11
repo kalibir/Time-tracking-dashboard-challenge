@@ -6,43 +6,17 @@ import Card from "../Cards";
 import Data from "../data.json";
 
 const GlobalWrapper = () => {
-	const [isDaily, setIsDaily] = useState(true);
-	const [isWeekly, setIsWeekly] = useState(false);
-	const [isMonthly, setIsMonthly] = useState(false);
 	const [active, setActive] = useState("daily");
 
 	// Click handler for li elements on UserCard
 	const handleClick = (e) => {
 		setActive(e.target.id);
-
-		//Conditions to handle active state for li elements on UserCard
-		if (active === "daily") {
-			setIsDaily(true);
-			setIsWeekly(false);
-			setIsMonthly(false);
-		}
-		if (active === "weekly") {
-			setIsDaily(false);
-			setIsWeekly(true);
-			setIsMonthly(false);
-		}
-		if (active === "monthly") {
-			setIsDaily(false);
-			setIsWeekly(false);
-			setIsMonthly(true);
-		}
 	};
 
 	return (
 		<div className='main'>
 			<div className='user-wrapper'>
-				<UserCard
-					active={active}
-					clickHandler={handleClick}
-					daily={isDaily}
-					weekly={isWeekly}
-					monthly={isMonthly}
-				/>
+				<UserCard active={active} clickHandler={handleClick} />
 			</div>
 			<div className='data-wrapper'>
 				{Data.length > 0
