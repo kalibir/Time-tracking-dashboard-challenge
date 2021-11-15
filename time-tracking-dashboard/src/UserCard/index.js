@@ -16,23 +16,29 @@ const UserCard = ({ clickHandler, active }) => {
 			</div>
 
 			<ul className='time-nav'>
-				<li
-					className={`nav-link ${active === "daily" ? "active" : ""}`}
-					onClick={clickHandler}
-					id='daily'>
-					Daily
+				<li>
+					<button
+						className={`nav-link ${active === "daily" ? "active" : ""}`}
+						onClick={clickHandler}
+						id='daily'>
+						Daily
+					</button>
 				</li>
-				<li
-					className={`nav-link ${active === "weekly" ? "active" : ""}`}
-					onClick={clickHandler}
-					id='weekly'>
-					Weekly
+				<li>
+					<button
+						className={`nav-link ${active === "weekly" ? "active" : ""}`}
+						onClick={clickHandler}
+						id='weekly'>
+						Weekly
+					</button>
 				</li>
-				<li
-					className={`nav-link ${active === "monthly" ? "active" : ""}`}
-					onClick={clickHandler}
-					id='monthly'>
-					Monthly
+				<li>
+					<button
+						className={`nav-link ${active === "monthly" ? "active" : ""}`}
+						onClick={clickHandler}
+						id='monthly'>
+						Monthly
+					</button>
 				</li>
 			</ul>
 		</div>
