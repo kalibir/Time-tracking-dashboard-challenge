@@ -39,12 +39,15 @@
 	list-style: none;
 	display: flex;
 	justify-content: space-around;
+	gap: 20px;
 	padding: 1.6em;
 }
 
 .nav-link {
 	color: hsl(235, 45%, 61%);
 	cursor: pointer;
+	background: none;
+	border: none;
 }
 
 .nav-link:hover {

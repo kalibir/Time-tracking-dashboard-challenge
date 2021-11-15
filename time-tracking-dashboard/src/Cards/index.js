@@ -6,7 +6,7 @@ const Card = ({ category, title, current, previous, active }) => {
 		<div className={`activity-card ${category}`}>
 			<div className='info-wrapper'>
 				<div className='card-header'>
-					<p className='category-name'>{title}</p>
+					<h6 className='category-name'>{title}</h6>
 					<div className='menu-btn'>
 						<div className='dot'></div>
 						<div className='dot'></div>
