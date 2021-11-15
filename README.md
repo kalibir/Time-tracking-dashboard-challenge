@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://github.com/kalibir/Time-tracking-dashboard-challenge/tree/master/time-tracking-dashboard)
-- Live Site URL: [Live site URL](https://kalibir-time-tracker-dashboard.netlify.app/)
+- Solution URL: [Solution URL](https://github.com/kalibir/Time-tracking-dashboard-challenge)
+- Live Site URL: [Live site URL](https://time-activity-dashboard.netlify.app/)
 
 ## My process
 
