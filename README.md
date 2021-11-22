@@ -12,8 +12,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Continued development](#continued-development)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 This solution was developed using the ReactJs framework since it is ideal for building reusable UI components.
@@ -116,10 +114,6 @@ If that condition returns `true` then we render the cards with the correspondent
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-
-### Continued development
-
-I may have over complicated the HTML markup in this project. I will have to refactor it in a way that it is easier to read and it doesn't break anything when displaying the elements in the browser.
 
 ## Author
 
